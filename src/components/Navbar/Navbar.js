@@ -4,7 +4,7 @@ import { AiFillBank,AiOutlineClose } from "react-icons/ai";
 import { BiMenu } from "react-icons/bi";
 import './Navbar.css';
 import {NavLink} from 'react-router-dom';
-import { Button } from '../Button';
+
 class Navbar extends Component {
 
     state={clicked:false}

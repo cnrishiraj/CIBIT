@@ -1,6 +1,7 @@
  import React from 'react'
  import './style.css';
  import axios from 'axios';
+ import '../alan/voice';
  class Login extends React.Component {
     constructor(props){
         super(props);
@@ -19,7 +20,7 @@
             .get(`http://localhost:4000/users/?username=${username}`)
             .then((res)=>{
                 console.log(res.data[0])
-                if(res.data.length==1
+                if(res.data.length===1
                      && password===res.data[0].password)
                         this.props.handleLogin(username,true,"");
                 else

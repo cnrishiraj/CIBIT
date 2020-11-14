@@ -1,7 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
 import AppRouter from './components/Routers/Routers';
-
+//import alanBtn from '@alan-ai/alan-sdk-web';
+import App1 from './components/alan/voice';
 import Login from './components/Auth/login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -34,9 +35,12 @@ class App extends Component {
       error
     })
   }
-  componentDidMount(){
-    console.log(this.state);
-  }
+
+
+  componentDidMount() {
+    console.log(this.state)
+   }
+  
   render(){
     const {isAuthenticated,username,error}=this.state
   
@@ -44,7 +48,7 @@ class App extends Component {
       <Router>
         <Switch>
           {!isAuthenticated ?
-              <Route exact path="/" render ={ () => <Login error={error} handleLogin = {this.handleLogin}/>}></Route> 
+              <Route exact path="/" render ={ () => <Login error={error} handleLogin = {this.handleLogin}/>} ></Route> 
                 :
               <Route path="/" render = {() => <AppRouter username={username} handleLogout={this.handleLogout}/>}></Route>
         

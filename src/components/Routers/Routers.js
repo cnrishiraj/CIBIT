@@ -4,7 +4,7 @@ import Transfer from '../transfers';
 import fd from '../fd';
 import Navbar from '../Navbar/Navbar';
 import Logout from '../Auth/logout'
-import {BrowserRouter as Router,Route, Link,Switch, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Switch, Redirect} from 'react-router-dom';
 function AppRouter({username,handleLogout}){
     
     return <Router>
