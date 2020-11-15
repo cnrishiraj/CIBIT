@@ -1,8 +1,8 @@
 import './App.css';
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import AppRouter from './components/Routers/Routers';
-//import alanBtn from '@alan-ai/alan-sdk-web';
-import App1 from './components/alan/voice';
+import alanBtn from '@alan-ai/alan-sdk-web';
+//import App1 from './components/alan/voice';
 import Login from './components/Auth/login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ class App extends Component {
       error:''
     }
     this.handleLogin=this.handleLogin.bind(this);
-    this.handleLogout=this.handleLogout.bind(this);
+    this.handleLogout=this.handleLogout.bind(this,false);
   }
   handleLogout(){
     console.log("log out");
@@ -37,9 +37,28 @@ class App extends Component {
   }
 
 
-  componentDidMount() {
-    console.log(this.state)
-   }
+  componentDidUpdate() {
+    if(this.state.isAuthenticated===true){
+      console.log("this is done ")
+    this.alanBtnInstance = alanBtn({ 
+      key: 'b1460b1760481aff85ece0b9df063d582e956eca572e1d8b807a3e2338fdd0dc/stage',
+      onCommand:({command})=>{
+        if(command==='test'){
+          console.log("this is cmg")
+        alert('this was executed')
+        }   
+      },
+    });
+    }
+  }
+  componentWillUnmount() {
+    if(this.state.isAuthenticated===false){
+    console.log('Component WILL UNMOUNT!')
+    this.alanBtnInstance = alanBtn({ 
+      key: 'b1460b1760481aff85ece0b9df063d582e956eca572e1d8b807a3e2338fdd0dc/stage'
+  });
+ }
+}
   
   render(){
     const {isAuthenticated,username,error}=this.state

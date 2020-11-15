@@ -4,12 +4,8 @@ import Transfer from '../transfers';
 import Fd from '../FixedDeposit/fixedDeposit';
 import Navbar from '../Navbar/Navbar';
 import Logout from '../Auth/logout'
-<<<<<<< HEAD
-import {BrowserRouter as Router,Route,Switch, Redirect} from 'react-router-dom';
-=======
 import {createBrowserHistory} from 'history';
-import {BrowserRouter as Router,Route ,Link,Switch, Redirect} from 'react-router-dom';
->>>>>>> upstream/main
+import {BrowserRouter as Router,Route ,Switch, Redirect} from 'react-router-dom';
 function AppRouter({username,handleLogout}){
     const history = createBrowserHistory();
     return <Router history={history} >
