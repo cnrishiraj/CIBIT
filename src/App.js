@@ -5,6 +5,7 @@ import alanBtn from '@alan-ai/alan-sdk-web';
 //import App1 from './components/alan/voice';
 import Login from './components/Auth/login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Axios from 'axios';
 
 class App extends Component {
   constructor(props){
@@ -45,7 +46,11 @@ class App extends Component {
       onCommand:({command})=>{
         if(command==='test'){
           console.log("this is cmg")
-        alert('this was executed')
+          Axios
+          .get(`http://localhost:4000/monthlyExpenseLimit`).then(response=>{
+            console.log("your MEL is: "+response.data[0].left)
+            alert("your MEL is: "+response.data[0].left)
+          })
         }   
       },
     });
