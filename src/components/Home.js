@@ -1,4 +1,3 @@
-
 import React ,{createRef} from 'react';
 import alanBtn from '@alan-ai/alan-sdk-web';
 import Axios from 'axios';
@@ -26,7 +25,7 @@ class Home extends React.Component{
             },
           });
     }
-    componentWillUnmount(){
+    componentWillUnmount(prevprops){
         this.alanBtnInstance.deactivate()
     }
     render(){

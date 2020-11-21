@@ -1,5 +1,4 @@
-
-
+/* eslint-disable no-useless-constructor */
 import {Redirect} from 'react-router-dom';
 import React from 'react';
 

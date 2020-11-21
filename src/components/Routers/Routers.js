@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import Home from '../Home';
 import Transfer from '../FundTransfer/transfers'
@@ -8,6 +9,7 @@ import {createBrowserHistory} from 'history';
 import {BrowserRouter as Router,Route ,Link,Switch, Redirect} from 'react-router-dom';
 class AppRouter extends React.Component{
 
+// eslint-disable-next-line no-useless-constructor
 constructor(props){
   super(props);
 }
